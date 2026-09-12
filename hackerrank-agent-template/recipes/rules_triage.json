@@ -1,0 +1,26 @@
+{
+  "rules": [
+    {
+      "name": "escalate-urgent",
+      "when": [
+        { "path": "feature.text.urgency", "op": "eq", "value": "high" }
+      ],
+      "label": "ESCALATE",
+      "reason": "high urgency signal from text features"
+    },
+    {
+      "name": "escalate-negative",
+      "when": [
+        { "path": "feature.text.sentiment", "op": "eq", "value": "negative" }
+      ],
+      "label": "ESCALATE",
+      "reason": "negative sentiment reported"
+    },
+    {
+      "name": "respond",
+      "when": [],
+      "label": "RESPOND",
+      "reason": "no escalators matched; safe to respond"
+    }
+  ]
+}

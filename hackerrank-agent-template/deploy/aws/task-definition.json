@@ -1,0 +1,31 @@
+{
+  "family": "hackerrank-agent",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "executionRoleArn": "arn:aws:iam::ACCOUNT_ID:role/hackerrank-agent-execution",
+  "taskRoleArn": "arn:aws:iam::ACCOUNT_ID:role/hackerrank-agent-task",
+  "containerDefinitions": [
+    {
+      "name": "agent",
+      "image": "ACCOUNT_ID.dkr.ecr.REGION.amazonaws.com/hackerrank-agent:latest",
+      "essential": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/hackerrank-agent",
+          "awslogs-region": "REGION",
+          "awslogs-stream-prefix": "batch"
+        }
+      },
+      "environment": [
+        {"name": "RECIPE_S3_URI", "value": "s3://YOUR_BUCKET/recipes/text-classification-bedrock.yaml"},
+        {"name": "INPUT_S3_URI", "value": "s3://YOUR_BUCKET/input/sample_tickets.csv"},
+        {"name": "OUTPUT_S3_URI", "value": "s3://YOUR_BUCKET/output/decisions_$(date +%s).csv"},
+        {"name": "TRACE_S3_URI", "value": "s3://YOUR_BUCKET/trace/trace.jsonl"},
+        {"name": "AWS_REGION", "value": "us-east-1"}
+      ]
+    }
+  ]
+}

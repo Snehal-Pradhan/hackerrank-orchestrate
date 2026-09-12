@@ -1,0 +1,68 @@
+name: text-classification
+meta:
+  description: offline-first triage agent (no API keys required)
+io:
+  input:
+    plugin: input.csv
+    config:
+      row_id_field: id
+  output:
+    plugin: output.csv
+    config:
+      columns: [row_id, decision]
+stages:
+  clean:
+    mode: one
+    plugins:
+      - name: cleaning.normalize
+        config:
+          strip: true
+  context:
+    mode: none
+  retrieve:
+    mode: none
+  extract:
+    mode: list
+    plugins:
+      - name: features.text
+        config:
+          text_fields: [message]
+      - name: features.risk
+        config:
+          text_fields: [message]
+  perceive:
+    mode: one
+    plugins:
+      - name: perception.mock
+        config:
+          text_fields: [message]
+  decide:
+    mode: one
+    plugins:
+      - name: policy.cascade
+        config:
+          levels:
+            - name: policy.safety
+              config: {}
+            - name: policy.domain
+              config:
+                rules_path: recipes/rules_triage.json
+            - name: policy.fallback
+              config:
+                default_label: ESCALATE
+  confidence:
+    mode: one
+    plugins:
+      - name: confidence.band
+        config: {}
+  validate:
+    mode: one
+    plugins:
+      - name: validation.output_contract
+        config:
+          allowed_labels: [RESPOND, ESCALATE, BLOCK]
+          columns: [decision]
+  trace:
+    mode: none
+  output:
+    mode: none
