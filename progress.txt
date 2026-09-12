@@ -1,0 +1,197 @@
+# HackerRank Orchestrate — Progress Tracker
+
+## Project Status: PLANNING COMPLETE → READY TO BUILD
+
+---
+
+## Session 1: Research & Strategy (Sept 3, 2026)
+
+### Hackathon Details
+- [x] Researched HackerRank Orchestrate September 2026 edition
+- [x] Confirmed challenge starts: September 12, 2026, 6 PM IST
+- [x] Confirmed format: 24-hour, solo, AI agent build + AI judge interview
+- [x] Confirmed registration: https://www.hackerrank.com/register/hackerrank-orchestrate-september26
+
+### Past Challenges Researched
+- [x] May 2026: Support Triage Agent (text tickets → reply/escalate)
+- [x] June 2026: Multi-Modal Damage-Claim Verification (text + images → support/contradict/NEI)
+- [x] August 2026: WhatsApp Message Notification Router (text + images + voice → notify/digest/mute)
+
+### Winning Patterns Identified
+- [x] Deterministic decisions win (code decides, LLM understands)
+- [x] 5-level policy cascade is the core architecture
+- [x] Validation framework enforces output contract
+- [x] Testing infrastructure provides verifiable proof (79/79 tests, 30/30 sample gold)
+- [x] Retrieval engine provides evidence-based decisions
+- [x] Confidence calibration (ridge regression, not LLM self-assessment)
+- [x] Same-user evidence isolation (no cross-user leakage)
+
+### Evaluation Criteria Mapped
+- [x] Agent Architecture: 30% weight
+- [x] Prompt & Tool Craft: 30% weight
+- [x] Agent Robustness: 25% weight
+- [x] Engineering Rigor: 15% weight
+
+### AI Judge Interview Strategy
+- [x] 30-minute voice interview
+- [x] Probes: pitch → architecture → safety → implementation → evaluation → monitoring → novelty
+- [x] Top candidates explain tradeoffs, evidence, regressions
+- [x] Surface-level answers correlate negatively with score
+
+---
+
+## Session 2: 3-Repo Strategy Designed (Sept 3, 2026)
+
+### Repo 1: hackerrank-agent-template
+- [x] Designed 13-feature module architecture
+- [x] Defined Policy Cascade (5 levels: safety → confidence → domain → evidence → fallback)
+- [x] Defined Validation Framework (input validation, output validation, atomic writes)
+- [x] Defined Testing Infrastructure (unit, adversarial, property-based, mutation, regression, golden)
+- [x] Defined Retrieval Engine (vector + keyword + hybrid, same-user isolation)
+- [x] Mapped features to evaluation criteria
+
+### Repo 2: hackerrank-fast-deploy
+- [x] Designed 6-stage deployment pipeline (45 min target)
+- [x] Stage 1: Environment Setup (5 min)
+- [x] Stage 2: Data Ingestion (5 min)
+- [x] Stage 3: Model Setup (5 min)
+- [x] Stage 4: Observability Stack (10 min)
+- [x] Stage 5: Production Hardening (10 min)
+- [x] Stage 6: Deployment Validation (10 min)
+- [x] Defined scripts: deploy, start, stop, health, rollback, monitor, backup
+
+### Repo 3: hackerrank-stress-test
+- [x] Designed 5 test categories
+- [x] Category 1: Throughput (single-item, batch, sustained, burst)
+- [x] Category 2: Concurrency (parallel, thread safety, connection pooling)
+- [x] Category 3: Scale (dataset size, memory, disk I/O, index scaling)
+- [x] Category 4: Reliability (error recovery, data corruption, resource exhaustion)
+- [x] Category 5: Accuracy under load (accuracy vs speed, consistency, degradation)
+- [x] Defined impressive numbers targets (50+ items/sec, <50ms p95, 80%+ accuracy, 0% errors)
+
+---
+
+## Session 3: Folder Structure Created (Sept 3, 2026)
+
+### Files Created
+- [x] hackerrank/README.md — 24-hour workflow (hour-by-hour guide)
+- [x] hackerrank/hackerrank-agent-template/README.md — Architecture overview
+- [x] hackerrank/hackerrank-agent-template/FEATURE_LIST.md — 13 modules, 200+ features
+- [x] hackerrank/hackerrank-fast-deploy/README.md — Deployment overview
+- [x] hackerrank/hackerrank-fast-deploy/FEATURE_LIST.md — 7 stages, scripts list
+- [x] hackerrank/hackerrank-stress-test/README.md — Testing overview
+- [x] hackerrank/hackerrank-stress-test/FEATURE_LIST.md — 5 categories, metrics
+- [x] hackerrank/progress.txt — This file
+
+---
+
+## Session 4: CORE Features Deep Dive (Sept 3, 2026)
+
+### Feature Impact Analysis
+- [x] Policy Cascade: 10/10 (THE differentiator)
+- [x] Validation Framework: 9/10 (output contract enforcement)
+- [x] Testing Infrastructure: 9/10 (verifiable proof)
+- [x] Retrieval Engine: 9/10 (evidence-based decisions)
+- [x] Observability Hooks: 8/10 (production readiness)
+- [x] Context Builder: 8/10 (per-item context)
+- [x] Confidence Calibration: 8/10 (calibrated scoring)
+- [x] Documentation: 8/10 (judge reads your README)
+- [x] Prompt Engineering: 7/10 (system prompts)
+- [x] Feature Extraction: 7/10 (120+ signals)
+- [x] LLM Integration: 7/10 (multi-model support)
+- [x] Input Layer: 6/10 (expected, not differentiating)
+- [x] Configuration Management: 5/10 (baseline)
+
+### CORE Features Deep Dive
+- [x] Policy Cascade: 5 levels detailed with examples
+- [x] Validation Framework: 3 layers (input, output, atomic writes)
+- [x] Testing Infrastructure: 6 test types defined
+- [x] Retrieval Engine: 3 components (vector, keyword, hybrid)
+- [x] CORE features connection map created
+
+---
+
+## Session 5: August Challenge Mapping (Sept 3, 2026)
+
+### August 2026: WhatsApp Message Notification Router
+- [x] Mapped to Policy Cascade (5 levels)
+- [x] Mapped to Validation Framework (output schema enforcement)
+- [x] Mapped to Testing Infrastructure (79 tests, safety 1.000)
+- [x] Mapped to Retrieval Engine (same-user, top-2, similarity ≥ 0.4)
+- [x] Complete flow diagram created
+
+---
+
+## Session 6: Predicted Challenges (Sept 3, 2026)
+
+### 5 Predicted September Topics
+- [x] Medical Triage Agent (25% probability)
+- [x] Legal Document Classifier (20% probability)
+- [x] Financial Transaction Monitor (25% probability)
+- [x] Code Review Agent (15% probability)
+- [x] Customer Feedback Router (15% probability)
+
+---
+
+## Build Order Defined
+
+### Phase 0: Foundation (DO FIRST)
+- [ ] Project structure (folders, __init__.py files)
+- [ ] models.py (input/output Pydantic schemas)
+- [ ] config.yaml (settings)
+- [ ] main.py (CLI + pipeline skeleton)
+- [ ] Logging setup (JSON structured logs)
+- [ ] AGENTS.md (transcript logging rules)
+
+### Phase 1: CORE (DO SECOND)
+- [ ] Policy Cascade (policy.py) — 10/10 impact
+- [ ] Validation Framework (validation.py) — 9/10 impact
+- [ ] Testing Infrastructure (tests/) — 9/10 impact
+- [ ] Retrieval Engine (retrieval.py) — 9/10 impact
+
+### Phase 2: HIGH IMPACT (DO THIRD)
+- [ ] Observability Hooks — 8/10 impact
+- [ ] Context Builder — 8/10 impact
+- [ ] Confidence Calibration — 8/10 impact
+- [ ] Documentation — 8/10 impact
+
+### Phase 3: MEDIUM IMPACT (DO FOURTH)
+- [ ] Prompt Engineering — 7/10 impact
+- [ ] Feature Extraction — 7/10 impact
+- [ ] LLM Integration — 7/10 impact
+
+### Phase 4: BASELINE (DO LAST)
+- [ ] Input Layer — 6/10 impact
+- [ ] Configuration Management — 5/10 impact
+
+---
+
+## User Background
+- Open source contributions: Prometheus, Fastify
+- DevOps: ArgoCD, K8s, GitOps, Docker, observability
+- LLMOps / AIOps
+- AWS AI Practitioner (fresh knowledge of Bedrock, SageMaker)
+- AWS Cloud Practitioner
+- Agentic AI experience
+
+---
+
+## Key Insights from Research
+
+1. **Deterministic decisions win** — Winners use code for decisions, not LLMs
+2. **Simplicity wins** — 400 lines of orchestration, 3 npm packages
+3. **Testing wins** — 79/79 tests, 30/30 sample gold, safety 1.000
+4. **Evidence wins** — Same-user only, top-2, oldest first
+5. **Interview wins** — Specific, auditable, honest answers
+6. **AWS knowledge helps mentally** but not for implementation (hackathon runs locally)
+7. **DevOps background is the real differentiator** — production thinking, observability, reliability
+
+---
+
+## Next Steps
+1. Build Phase 0 (Foundation) — project scaffolding
+2. Build Phase 1 (CORE) — the 4 winning features
+3. Test against sample data when challenge drops (Sept 12, 6 PM IST)
+4. Deploy with fast-deploy repo
+5. Run stress tests for impressive numbers
+6. Submit + ace the AI judge interview
